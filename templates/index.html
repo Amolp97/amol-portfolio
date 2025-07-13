@@ -8,6 +8,20 @@
 </head>
 <body>
 
+ 
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+     <div class="top-contact">
+    <span>📧 patilamolr15@gmail.com</span>
+    <span>📞 9404805827</span>
+  </div>
+  </nav>
+
   <!-- Theme Toggle -->
   <div class="toggle-container">
     <label class="switch">
@@ -27,19 +41,18 @@
   <!-- About -->
   <section class="reveal" id="about">
     <h2>About Me</h2>
-     <p>
-    Application Support Engineer with 1.5 years of hands-on experience in the FinTech domain, 
-    specializing in FASTag toll collection under IDBI Bank’s acquiring systems. Skilled in real-time 
-    transaction monitoring, troubleshooting, and cross-functional coordination with stakeholders 
-    such as NPCI and NHAI. Proficient in SQL, Python, Excel, and Linux for data analysis, reconciliation, 
-    and system support.
-  </p>
-  <p>
-    Experienced with GitHub version control, Git CLI, and collaborative workflows. Proficient in 
-    deploying web applications using Render and managing environment configurations. Capable 
-    of running live development environments with Live Server and VS Code. Comfortable with 
-    tools like Flask, openpyxl, pandas, and API integrations to build full-stack dynamic applications.
-  </p>
+    <p>
+      Application Support Engineer with 1.5 years of hands-on experience in the FinTech domain,
+      specializing in FASTag toll collection under IDBI Bank’s acquiring systems. Skilled in real-time
+      transaction monitoring, troubleshooting, and cross-functional coordination with stakeholders
+      such as NPCI and NHAI. Proficient in SQL, Python, Excel, and Linux for data analysis, reconciliation,
+      and system support.
+    </p>
+    <p>
+      Experienced with GitHub version control, Git CLI, and collaborative workflows. Proficient in
+      deploying web applications using Render and managing environment configurations. Comfortable with
+      tools like Flask, openpyxl, pandas, and API integrations to build full-stack dynamic applications.
+    </p>
   </section>
 
   <!-- Projects -->
@@ -48,39 +61,60 @@
     <div id="project-container" class="project-grid"></div>
   </section>
 
-  <!-- Contact -->
-  <section class="reveal" id="contact">
-    <h2>Contact</h2>
-    <p>Email: patilamolr15@gmail.com</p>
-    <p>Phone: 9404805827</p>
+  <!-- Blog Preview Section -->
+  <section class="reveal" id="blog">
+    <h2>My Blog</h2>
+    <p>
+      I share insights, tutorials, and real-world experience from my work in FASTag systems, automation,
+      and support engineering. Below are a few recent posts:
+    </p>
+    <div id="blog-preview" class="blog-preview"></div>
+    <a href="/blog" class="btn-neon">📝 Read All Blog Posts</a>
   </section>
 
-  <!-- Contact Section -->
-<section class="reveal contact-section" id="contact">
-  <h2>Contact Me</h2>
-  
-  {% if success %}
-    <p class="success-message">✅ Your message has been sent successfully!</p>
-  {% endif %}
+  <!-- Contact -->
+  <section class="reveal contact-section" id="contact">
+    <h2>Contact Me</h2>
 
-  <form action="/send-message" method="POST" class="contact-form">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-    <button type="submit" class="btn-neon">Send Message</button>
-  </form>
+    {% if success %}
+      <p class="success-message">✅ Your message has been sent successfully!</p>
+    {% endif %}
 
-  <div class="contact-info">
-    <p>Email: patilamolr15@gmail.com</p>
-    <p>Phone: 9404805827</p>
-  </div>
-</section>
+    <form action="/send-message" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn-neon">Send Message</button>
+    </form>
 
-
+    <div class="contact-info">
+      <p>Email: patilamolr15@gmail.com</p>
+      <p>Phone: 9404805827</p>
+    </div>
+  </section>
 
   <!-- Scroll to top -->
   <button onclick="scrollToTop()" class="scroll-btn">⬆</button>
 
   <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script>
+    // Load blog previews from your JSON API
+    fetch('/data/blog.json')
+      .then(res => res.json())
+      .then(data => {
+        const preview = document.getElementById('blog-preview');
+        const topPosts = data.slice(0, 2); // Show top 2
+        topPosts.forEach(post => {
+          const div = document.createElement('div');
+          div.className = 'project-card';
+          div.innerHTML = `
+            <h3>${post.title}</h3>
+            <small>${post.date}</small>
+            <p>${post.description}</p>
+          `;
+          preview.appendChild(div);
+        });
+      });
+  </script>
 </body>
 </html>

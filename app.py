@@ -10,6 +10,13 @@ def home():
     success = request.args.get("success")  # get success flag from query params
     return render_template("index.html", success=success)
 
+# Blog route
+@app.route("/blog")
+def blog():
+    with open("data/blog.json") as f:  # ✅ Corrected file name + syntax
+        blogs = json.load(f)
+    return render_template("blog.html", blogs=blogs)
+
 # API to serve project data
 @app.route("/api/projects")
 def get_projects():

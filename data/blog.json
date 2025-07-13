@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "How I Built My Portfolio",
+    "date": "2025-07-13",
+    "description": "A breakdown of tools and strategies used to build this portfolio.",
+    "content": "This is where your full blog content goes. You can expand this section with Markdown support later."
+  },
+  {
+    "id": 2,
+    "title": "FASTag Systems Explained",
+    "date": "2025-06-10",
+    "description": "An overview of how FASTag works and my contribution at IDBI Bank.",
+    "content": "Full article content goes here..."
+  }
+]

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog | Amol Patil</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>📝 Blog</h1>
+    <p>Read my latest thoughts and technical experiences</p>
+  </header>
+
+  <section class="reveal">
+    {% for post in blogs %}
+    <div class="project-card">
+      <h3>{{ post.title }}</h3>
+      <small>{{ post.date }}</small>
+      <p>{{ post.description }}</p>
+      <details>
+        <summary>Read More</summary>
+        <p>{{ post.content }}</p>
+      </details>
+    </div>
+    {% endfor %}
+  </section>
+
+  <a href="/" class="btn-neon">⬅ Back to Home</a>
+</body>
+</html>
