@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Excel Merger Tool",
+    "description": "Python desktop app that merges Excel files and compares data by Transaction ID.",
+    "link": "https://github.com/amolpatil/excel-merger-tool"
+  },
+  {
+    "title": "Django Clothing Store",
+    "description": "Web app built in Django with user login, product views, and admin control.",
+    "link": "https://github.com/amolpatil/django-clothing-store"
+  },
+  {
+    "title": "Daily Work Email Bot",
+    "description": "Automates daily report sending using Python and Excel data with email integration.",
+    "link": "https://github.com/amolpatil/daily-work-bot"
+  },
+  {
+    "title": "FASTag Monitoring Dashboard",
+    "description": "Real-time dashboard for monitoring FASTag toll transactions with SQL and Flask.",
+    "link": "https://github.com/amolpatil/fastag-monitoring"
+  }
+]

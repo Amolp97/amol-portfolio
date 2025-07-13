@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amol Patil | Portfolio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- Theme Toggle -->
+  <div class="toggle-container">
+    <label class="switch">
+      <input type="checkbox" id="theme-toggle">
+      <span class="slider"></span>
+    </label>
+    <span>Dark Mode</span>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <h1><span id="typed-text"></span><span class="cursor">|</span></h1>
+    <p>Application Support Engineer | FinTech | FASTag Systems</p>
+    <a href="{{ url_for('static', filename='resume.pdf') }}" class="btn-neon" download>Download Resume</a>
+  </header>
+
+  <!-- About -->
+  <section class="reveal" id="about">
+    <h2>About Me</h2>
+    <p>I have 1.5 years of experience in the FinTech domain, especially in FASTag toll systems with IDBI Bank. I work on transaction flow monitoring, troubleshooting, and data handling.</p>
+  </section>
+
+  <!-- Projects -->
+  <section class="reveal" id="projects">
+    <h2>My Projects</h2>
+    <div id="project-container" class="project-grid"></div>
+  </section>
+
+  <!-- Contact -->
+  <section class="reveal" id="contact">
+    <h2>Contact</h2>
+    <p>Email: patilamolr15@gmail.com</p>
+    <p>Phone: 9404805827</p>
+  </section>
+
+  <!-- Scroll to top -->
+  <button onclick="scrollToTop()" class="scroll-btn">⬆</button>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
