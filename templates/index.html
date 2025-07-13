@@ -55,6 +55,29 @@
     <p>Phone: 9404805827</p>
   </section>
 
+  <!-- Contact Section -->
+<section class="reveal contact-section" id="contact">
+  <h2>Contact Me</h2>
+  
+  {% if success %}
+    <p class="success-message">✅ Your message has been sent successfully!</p>
+  {% endif %}
+
+  <form action="/send-message" method="POST" class="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit" class="btn-neon">Send Message</button>
+  </form>
+
+  <div class="contact-info">
+    <p>Email: patilamolr15@gmail.com</p>
+    <p>Phone: 9404805827</p>
+  </div>
+</section>
+
+
+
   <!-- Scroll to top -->
   <button onclick="scrollToTop()" class="scroll-btn">⬆</button>
 
